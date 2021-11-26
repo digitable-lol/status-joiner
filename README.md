@@ -1,5 +1,7 @@
 # Status Joiner
 
+![arch](./design/arch.jpg)
+
 ## Useful links
 
 - [Figma](https://www.figma.com/file/4VblKaeQnFwIMrBPlfPK0c/Status-joiner?node-id=0%3A1)
