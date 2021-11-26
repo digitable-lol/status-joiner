@@ -1,0 +1,202 @@
+{
+  "openapi": "3.0.0",
+  "servers": [
+    {
+      "url": "http://localhost:8080"
+    }
+  ],
+  "info": {
+    "description": ":cat:",
+    "version": "1.0.0",
+    "title": "Future Code Lab - Status Joiner",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "email": "zimtir@mail.ru",
+      "name": "Marat Zimnurov",
+      "url": "https://github.com/Zimtir"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "tags": [
+    {
+      "name": "user",
+      "description": "Operations about user",
+      "externalDocs": {
+        "description": "Find out more about our store",
+        "url": "http://swagger.io"
+      }
+    },
+    {
+      "name": "status",
+      "externalDocs": {
+        "url": "http://swagger.io",
+        "description": "Find out more about our store"
+      },
+      "description": "Operations about statuses"
+    }
+  ],
+  "paths": {
+    "/api/status": {
+      "x-temp": {
+        "tags": ["server", "heartbeat"],
+        "summary": "Server availability",
+        "description": "Provides status for availability of server. Can be extended to the heartbeat system.",
+        "operationId": "status",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        },
+        "parameters": [],
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {}
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Server availability",
+        "description": "Provides status of server to be ensure that server has been started and works as expected.\nCan be extended into Heartbeat-system.",
+        "parameters": [],
+        "operationId": "",
+        "responses": {
+          "200": {
+            "description": "Default response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "status": "number",
+                  "message": "string"
+                }
+              }
+            }
+          }
+        },
+        "tags": ["server", "heartbeat"]
+      }
+    },
+    "/api/endpoints": {
+      "get": {
+        "summary": "Server routes",
+        "description": "Provides list of available routes at server. Can be useful to determine contracts between frontend and backend.",
+        "parameters": [],
+        "operationId": "",
+        "responses": {
+          "200": {
+            "description": "Default response",
+            "content": {
+              "application/json": {
+                "schema": [
+                  {
+                    "path": "string",
+                    "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"],
+                    "middleware": ["anonymous"]
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "tags": ["server", "router"]
+      }
+    },
+    "/api/users/login": {
+      "x-temp": {
+        "summary": "",
+        "description": "",
+        "parameters": [],
+        "operationId": "/login",
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        }
+      },
+      "get": {
+        "summary": "",
+        "description": "",
+        "parameters": [],
+        "operationId": "",
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        }
+      }
+    },
+    "/api/status/teams/put": {
+      "put": {
+        "summary": "",
+        "description": "",
+        "parameters": [],
+        "operationId": "",
+        "responses": {
+          "default": {
+            "description": "Default response"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "token": "string"
+              }
+            }
+          },
+          "description": "Bearer token"
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {},
+    "requestBodies": {
+      "Pet": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Pet"
+            }
+          },
+          "application/xml": {
+            "schema": {
+              "$ref": "#/components/schemas/Pet"
+            }
+          }
+        },
+        "description": "Pet object that needs to be added to the store",
+        "required": true
+      },
+      "UserArray": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          }
+        },
+        "description": "List of user object",
+        "required": true
+      }
+    },
+    "securitySchemes": {},
+    "links": {},
+    "callbacks": {}
+  },
+  "security": []
+}
