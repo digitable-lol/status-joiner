@@ -3,6 +3,7 @@ import React from 'react'
 import cx from 'classnames'
 
 import { Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 import { Image } from 'src/components/Image'
 
@@ -31,6 +32,10 @@ export const Connectors = () => {
           <Image src="/images/discord.svg" />
         </Button>
       </div>
+
+      <Link to="/status" className={cx('btn btn-secondary btn-lg')}>
+        Тут должна быть стрелочка
+      </Link>
     </div>
   )
 }
