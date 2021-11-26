@@ -1,0 +1,17 @@
+.button {
+  margin-top: 40px;
+  padding: 30px;
+  width: 637px;
+  border-radius: 128px;
+  background: #725ac1;
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+
+  &:hover {
+    background-color: #ffffff;
+    color: blueviolet;
+  }
+}

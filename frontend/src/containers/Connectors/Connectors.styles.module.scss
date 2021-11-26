@@ -17,8 +17,8 @@
   position: absolute;
   display: flex;
   justify-content: center;
-  align-items:flex-end;
-  padding-bottom:20px;
+  align-items: flex-end;
+  padding-bottom: 20px;
   width: 658px;
   height: 202px;
   background: #7b83eb;
@@ -26,14 +26,13 @@
 }
 
 .text {
-  font-family: Inter;
   font-size: 40px;
   font-style: normal;
   font-weight: 500;
   line-height: 48px;
   letter-spacing: 0em;
   text-align: left;
-  color:#FFFFFF;
+  color: #ffffff;
 }
 
 .block {
@@ -56,9 +55,8 @@
   border-radius: 36px;
   margin: 30px;
 
-  &:hover{
+  &:hover {
     border: 2px solid #cac4ce;
-    background: #1F1A2480;
-
+    background: #1f1a2480;
   }
 }

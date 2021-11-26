@@ -2,8 +2,8 @@ import React from 'react'
 
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
 
-import { Home } from 'src/components/Home'
-import { WindowIcon } from 'src/components/WindowIcon'
+import { Connectors } from 'src/containers/Connectors'
+import { Home } from 'src/containers/Home'
 
 import css from './styles.module.scss'
 
@@ -13,7 +13,7 @@ export const App = () => {
       <div className={css.wrapper}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/windowicon" element={<WindowIcon />} />
+          <Route path="/connectors" element={<Connectors />} />
         </Routes>
       </div>
     </BrowserRouter>
