@@ -45,3 +45,11 @@ fetch("https://presence.teams.microsoft.com/v1/me/publishnote", {
   method: "PUT",
 });
 ```
+
+### Slack
+
+- [Statuses](https://api.slack.com/docs/presence-and-status)
+
+### VKontakte
+
+- [Statuses](https://vk.com/dev/status)
