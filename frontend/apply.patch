@@ -1,0 +1,90 @@
+diff --git a/frontend/src/components/CardStatus/CardStatus.styles.module.scss b/frontend/src/components/CardStatus/CardStatus.styles.module.scss
+index 5976acb..2007c30 100644
+--- a/frontend/src/components/CardStatus/CardStatus.styles.module.scss
++++ b/frontend/src/components/CardStatus/CardStatus.styles.module.scss
+@@ -2,17 +2,28 @@
+   display: flex;
+   justify-content: center;
+   align-items: center;
++  flex-wrap: wrap;
+ }
+ 
+-.item{
++.block {
++  display: flex;
++  justify-content: center;
++  align-items: center;
++  flex-wrap: wrap;
++  width: 100%;
++  height: 400px;
++}
++
++.item {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 232px;
+   width: 952px;
+   border-radius: 136px;
+-  background: #1F1A24;
+-  border: 3px solid #CAC4CE
++  background: #1f1a24;
++  border: 3px solid #cac4ce;
++}
+ 
+ .text {
+   font-family: Inter;
+@@ -22,4 +33,12 @@
+   line-height: 48px;
+   letter-spacing: 0em;
+   text-align: left;
++}
++
++.btn{
++  display: flex;
++  justify-content: center;
++  align-items: center;
++  background-color: #242038;
++  
+ }
+\ No newline at end of file
+diff --git a/frontend/src/components/CardStatus/CardStatus.tsx b/frontend/src/components/CardStatus/CardStatus.tsx
+index 8df331f..cb06d70 100644
+--- a/frontend/src/components/CardStatus/CardStatus.tsx
++++ b/frontend/src/components/CardStatus/CardStatus.tsx
+@@ -9,10 +9,13 @@ import css from './CardStatus.styles.module.scss'
+ export const CardStatus = () => {
+   return (
+     <div className={css.container}>
++      <div className={cx(css.block)}> </div>
+       <FloatingLabel controlId="floatingTextarea" label="В ведите ваш статус" className="mb-3">
+         <Form.Control className={cx(css.item)} as="textarea" placeholder="В ведите ваш статус" />
+       </FloatingLabel>
+-      <button className={cx(css.text, css.btn)}>Подтвердить</button>
++      <div>
++        <button className={cx(css.text, css.btn)}>Подтвердить</button>
++      </div>
+     </div>
+   )
+ }
+diff --git a/frontend/src/components/ImagesSvg/insta.svg b/frontend/src/components/ImagesSvg/insta.svg
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/frontend/src/components/ImagesSvg/slack.svg b/frontend/src/components/ImagesSvg/slack.svg
+index fc1d705..e69de29 100644
+--- a/frontend/src/components/ImagesSvg/slack.svg
++++ b/frontend/src/components/ImagesSvg/slack.svg
+@@ -1,13 +0,0 @@
+-<svg width="98" height="98" viewBox="0 0 98 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+-	<g clip-path="url(#clip0_31_499)">
+-		<path d="M35.7733 0.241699C30.3849 0.241699 26.0174 4.61903 26.0174 10.0172C26.0161 11.2996 26.2674 12.5698 26.757 13.7551C27.2466 14.9404 27.9648 16.0177 28.8707 16.9255C29.7767 17.8332 30.8525 18.5536 32.0368 19.0456C33.2212 19.5375 34.4908 19.7914 35.7733 19.7927H45.5308V10.0172C45.533 7.42702 44.5062 4.94205 42.6764 3.10884C40.8465 1.27562 38.3634 0.244297 35.7733 0.241699ZM35.7733 26.3097H9.7559C4.36753 26.3097 0 30.687 0 36.0868C0 41.485 4.36753 45.8623 9.7559 45.8623H35.7749C41.1616 45.8623 45.5308 41.485 45.5308 36.0868C45.5308 30.687 41.1616 26.3097 35.7733 26.3097Z" fill="#7B83EB" />
+-		<path d="M97.5657 36.0868C97.5657 30.687 93.1965 26.3097 87.8082 26.3097C82.4198 26.3097 78.0523 30.687 78.0523 36.0868V45.8623H87.8082C90.3983 45.8597 92.8814 44.8284 94.7113 42.9952C96.5411 41.162 97.5679 38.677 97.5657 36.0868ZM71.5483 36.0868V10.0172C71.5505 7.42702 70.5238 4.94205 68.6939 3.10884C66.8641 1.27562 64.381 0.244297 61.7908 0.241699C56.4024 0.241699 52.0349 4.61903 52.0349 10.0172V36.0852C52.0349 41.4866 56.4024 45.864 61.7908 45.864C64.381 45.8614 66.8641 44.83 68.6939 42.9968C70.5238 41.1636 71.5505 38.6786 71.5483 36.0885" fill="#7B83EB" />
+-		<path d="M61.7908 98C64.381 97.9974 66.8641 96.9661 68.6939 95.1329C70.5238 93.2997 71.5505 90.8147 71.5483 88.2245C71.5505 85.6344 70.5238 83.1494 68.6939 81.3162C66.8641 79.483 64.381 78.4516 61.7908 78.449H52.0349V88.2245C52.0349 93.6227 56.4025 98 61.7908 98ZM61.7908 71.932H87.8098C93.1966 71.932 97.5657 67.5547 97.5657 62.1549C97.5679 59.5647 96.5411 57.0797 94.7113 55.2465C92.8814 53.4133 90.3984 52.382 87.8082 52.3794H61.7908C56.4025 52.3794 52.0349 56.7567 52.0349 62.1549C52.0336 63.4373 52.285 64.7075 52.7745 65.8928C53.2641 67.0781 53.9824 68.1554 54.8883 69.0632C55.7942 69.9709 56.8701 70.6913 58.0544 71.1833C59.2387 71.6752 60.5084 71.9291 61.7908 71.9304" fill="#7B83EB" />
+-		<path d="M4.92259e-06 62.1549C-0.00128268 63.4373 0.25004 64.7075 0.739623 65.8928C1.22921 67.0781 1.94746 68.1554 2.85338 69.0632C3.7593 69.9709 4.83514 70.6913 6.01948 71.1833C7.20382 71.6752 8.47346 71.9291 9.75591 71.9304C12.3461 71.9278 14.8292 70.8965 16.659 69.0633C18.4889 67.23 19.5156 64.7451 19.5134 62.1549V52.3794H9.75591C4.36754 52.3794 4.92259e-06 56.7567 4.92259e-06 62.1549ZM26.0174 62.1549V88.2229C26.0174 93.6227 30.3849 98 35.7733 98C38.3635 97.9974 40.8465 96.9661 42.6764 95.1329C44.5062 93.2997 45.533 90.8147 45.5308 88.2245V62.1549C45.5321 60.8723 45.2807 59.602 44.791 58.4166C44.3014 57.2312 43.583 56.1538 42.6769 55.2461C41.7708 54.3383 40.6947 53.6179 39.5102 53.126C38.3257 52.6342 37.0559 52.3805 35.7733 52.3794C30.3849 52.3794 26.0174 56.7567 26.0174 62.1549Z" fill="#7B83EB" />
+-	</g>
+-	<defs>
+-		<clipPath id="clip0_31_499">
+-			<rect width="98" height="98" fill="white" />
+-		</clipPath>
+-	</defs>
+-</svg>

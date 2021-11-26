@@ -18,11 +18,38 @@
 ```javascript
 fetch("https://presence.teams.microsoft.com/v1/me/forceavailability/", {
   headers: {
+    accept: "json",
     authorization: "Bearer TOKEN_HERE",
     Referer: "https://teams.microsoft.com/",
     "Referrer-Policy": "strict-origin-when-cross-origin",
+    "cache-control": "no-cache",
+    "content-type": "application/json",
   },
   body: '{"availability":"Available"}',
   method: "PUT",
 });
 ```
+
+- Set status text
+
+```javascript
+fetch("https://presence.teams.microsoft.com/v1/me/publishnote", {
+  headers: {
+    accept: "json",
+    "accept-language": "en-US,en;q=0.9,ru-RU;q=0.8,ru;q=0.7",
+    authorization: "Bearer TOKEN_HERE",
+    "cache-control": "no-cache",
+    "content-type": "application/json",
+  },
+  body: '{"message":"text","expiry":"2021-11-26T20:59:59.999Z"}',
+  method: "PUT",
+});
+```
+
+### Slack
+
+- [Statuses](https://api.slack.com/docs/presence-and-status)
+
+### VKontakte
+
+- [Statuses](https://vk.com/dev/status)
