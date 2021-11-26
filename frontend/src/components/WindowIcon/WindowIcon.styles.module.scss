@@ -17,8 +17,8 @@
   position: absolute;
   display: flex;
   justify-content: center;
-  align-items:flex-end;
-  padding-bottom:20px;
+  align-items: flex-end;
+  padding-bottom: 20px;
   width: 658px;
   height: 202px;
   background: #7b83eb;
@@ -33,7 +33,7 @@
   line-height: 48px;
   letter-spacing: 0em;
   text-align: left;
-  color:#FFFFFF;
+  color: #ffffff;
 }
 
 .block {
@@ -56,9 +56,16 @@
   border-radius: 36px;
   margin: 30px;
 
-  &:hover{
+  &:hover {
     border: 2px solid #cac4ce;
-    background: #1F1A2480;
-
+    background: #1f1a2480;
   }
+}
+
+.arrow {
+  background: #725ac1;
+  height: 70px;
+  width: 89.875px;
+  margin-right: 90px;
+  border-radius: 0px;
 }

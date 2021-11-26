@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .text {
@@ -17,6 +18,9 @@
 }
 
 .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 139px;
   width: 637px;
   border-radius: 128px;

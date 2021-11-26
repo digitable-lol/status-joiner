@@ -1,8 +1,17 @@
 .container {
-  width: 500px;
-  height: 700px;
   display: flex;
   justify-content: center;
   align-items: center;
-  
+}
+
+.item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 232px;
+  width: 952px;
+  border-radius: 136px;
+  background: #1F1A24;
+  border: 3px solid #CAC4CE
+
 }
